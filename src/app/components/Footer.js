@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { contactInfo, branches } from '@/data/siteData';
 
@@ -32,13 +33,19 @@ export default function Footer() {
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-16 pb-12">
+      <div className="relative z-10 section-inner pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-12">
           {/* Column 1 - About */}
           <div>
             <div className="flex items-center gap-3.5 mb-7">
-              <div className="w-11 h-11 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
+              <div className="w-11 h-11 rounded-full overflow-hidden border border-primary/10 flex items-center justify-center shadow-sm">
+                <Image
+                  src="/images/meera-logo.jpeg"
+                  alt="Meera Laboratory logo"
+                  width={56}
+                  height={56}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div>
                 <div className="text-white font-bold text-lg leading-tight">Meera Laboratory</div>
@@ -138,7 +145,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
+        <div className="section-inner py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
           <p>&copy; {currentYear} Meera Laboratory. All rights reserved.</p>
           <p>Trusted Diagnostics in Surat, Gujarat</p>
         </div>

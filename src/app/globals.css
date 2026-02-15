@@ -30,6 +30,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global section spacing helpers for consistent layout rhythm */
+.section-spacing {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.section-spacing-tight {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.section-spacing-wide {
+  padding-block: clamp(4rem, 10vw, 7rem);
+}
+
+.section-inner {
+  width: min(80rem, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

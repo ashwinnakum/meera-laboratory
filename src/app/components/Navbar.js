@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -37,7 +38,7 @@ export default function Navbar() {
     <>
       {/* Top Info Bar */}
       <div className="bg-primary text-white text-sm py-3 relative z-50">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-wrap justify-between items-center gap-3">
+        <div className="section-inner flex flex-wrap justify-between items-center gap-3">
           <div className="flex items-center gap-6 flex-wrap">
             <a href={`tel:${contactInfo.phones[0]}`} className="flex items-center gap-2.5 hover:text-blue-200 transition-colors">
               <FaPhone className="w-3 h-3" />
@@ -63,12 +64,19 @@ export default function Navbar() {
             : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="section-inner">
           <div className="flex justify-between items-center h-[72px] md:h-[84px]">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3.5">
-              <div className="w-11 h-11 md:w-12 md:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">M</span>
+              <div className="w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden border border-primary/10 shadow-sm flex items-center justify-center">
+                <Image
+                  src="/images/meera-logo.jpeg"
+                  alt="Meera Laboratory logo"
+                  width={64}
+                  height={64}
+                  priority
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div>
                 <div className="text-lg md:text-xl font-bold text-primary leading-tight">

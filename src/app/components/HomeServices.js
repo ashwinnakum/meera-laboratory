@@ -35,7 +35,7 @@ export default function HomeServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-base"
+          className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-base text-center"
         >
           Comprehensive range of pathology and diagnostic tests with accurate results and same-day reports.
         </motion.p>

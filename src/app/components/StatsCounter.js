@@ -38,7 +38,7 @@ function Counter({ value, suffix = '', prefix = '' }) {
 
 export default function StatsCounter({ stats }) {
   return (
-    <section className="relative bg-primary py-16 md:py-20 overflow-hidden">
+    <section className="relative bg-primary section-spacing-tight overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{
@@ -50,8 +50,8 @@ export default function StatsCounter({ stats }) {
       <div className="absolute -top-20 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+      <div className="relative z-10 section-inner">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

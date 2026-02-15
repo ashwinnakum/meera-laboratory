@@ -34,7 +34,7 @@ export default function AboutContent() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
+      <section className="relative section-spacing-wide bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -43,7 +43,7 @@ export default function AboutContent() {
           }}
         />
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
+        <div className="relative z-10 section-inner text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -10,6 +10,7 @@ export default function SectionWrapper({
   background = 'white',
   withPattern = false,
   withBlobs = false,
+  spacing = 'default',
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -21,11 +22,17 @@ export default function SectionWrapper({
     dark: 'bg-primary',
   };
 
+  const spacingClasses = {
+    default: 'section-spacing',
+    compact: 'section-spacing-tight',
+    wide: 'section-spacing-wide',
+  };
+
   return (
     <section
       id={id}
       ref={ref}
-      className={`relative py-20 md:py-28 overflow-hidden ${bgClasses[background] || bgClasses.white} ${className}`}
+      className={`relative overflow-hidden ${spacingClasses[spacing] || spacingClasses.default} ${bgClasses[background] || bgClasses.white} ${className}`}
     >
       {withPattern && (
         <div
@@ -49,7 +56,7 @@ export default function SectionWrapper({
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12"
+        className="relative z-10 section-inner"
       >
         {children}
       </motion.div>
