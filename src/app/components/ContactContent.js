@@ -4,14 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 import ContactForm from './ContactForm';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa';
 import { branches, contactInfo } from '@/data/siteData';
 
 export default function ContactContent() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden py-20 md:py-28">
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -20,19 +20,22 @@ export default function ContactContent() {
           }}
         />
         <div className="absolute -top-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
+        <div className="absolute bottom-10 right-10 w-60 h-60 bg-white/5 rounded-full blur-3xl" />
+        <div className="relative z-10 section-inner text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-5">
+            <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-white">Contact Us</span>
+              <span className="text-white font-medium">Contact Us</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Get In Touch</h1>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              Get In Touch
+            </h1>
+            <p className="text-blue-100 text-lg max-w-xl mx-auto leading-relaxed">
               Book your tests, schedule home collection, or reach out for any enquiries.
             </p>
           </motion.div>
@@ -44,39 +47,108 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* Contact Form + Info */}
-      <SectionWrapper background="white" withBlobs>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
-          {/* Form */}
+      {/* Quick Contact Strip */}
+      <section className="bg-background relative z-20">
+        <div className="section-inner">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 -mt-8">
+            {[
+              {
+                icon: FaPhone,
+                label: 'Call Us',
+                value: contactInfo.phones[0],
+                href: `tel:${contactInfo.phones[0]}`,
+                color: 'from-blue-500 to-blue-600',
+              },
+              {
+                icon: FaEnvelope,
+                label: 'Email Us',
+                value: contactInfo.email,
+                href: `mailto:${contactInfo.email}`,
+                color: 'from-indigo-500 to-indigo-600',
+              },
+              {
+                icon: FaClock,
+                label: 'Working Hours',
+                value: 'Mon-Sat: 7AM - 9PM',
+                subValue: 'Sun: 7AM - 2PM',
+                color: 'from-violet-500 to-violet-600',
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{item.label}</p>
+                      <p className="text-sm font-bold text-gray-900 mt-0.5 truncate group-hover:text-primary transition-colors">{item.value}</p>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{item.label}</p>
+                      <p className="text-sm font-bold text-gray-900 mt-0.5">{item.value}</p>
+                      {item.subValue && (
+                        <p className="text-xs text-gray-500 mt-0.5">{item.subValue}</p>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form + Branch Info */}
+      <SectionWrapper background="light" withBlobs spacing="wide">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+          {/* Form - takes 3 columns */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-3"
           >
-            <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
-              Book a Test
-            </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Send Us Your Enquiry
-            </h2>
+            <div className="mb-8">
+              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3">
+                Book a Test
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Send Us Your Enquiry
+              </h2>
+            </div>
             <ContactForm />
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Branch Info - takes 2 columns */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-7"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-2 space-y-6"
           >
-            <div>
-              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
+            <div className="mb-8">
+              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3">
                 Our Branch
               </span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Visit Us or Call
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Visit Us
               </h2>
             </div>
 
@@ -84,81 +156,124 @@ export default function ContactContent() {
             {branches.map((branch) => (
               <div
                 key={branch.id}
-                className="bg-light-gray rounded-2xl p-7 space-y-5 border border-gray-100"
+                className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
               >
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white text-sm font-bold shrink-0">
-                    {branch.id}
-                  </div>
-                  {branch.name}
-                </h3>
-                <div className="flex items-start gap-3.5 text-gray-600 text-[15px]">
-                  <FaMapMarkerAlt className="w-4 h-4 text-accent shrink-0 mt-1" />
-                  <span className="leading-relaxed">{branch.address}</span>
+                {/* Branch Header */}
+                <div className="bg-gradient-to-r from-primary to-secondary px-6 py-4">
+                  <h3 className="text-white font-bold text-lg flex items-center gap-3">
+                    <span className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm font-bold">
+                      {branch.id}
+                    </span>
+                    {branch.name}
+                  </h3>
                 </div>
-                <a
-                  href={`tel:${branch.phone}`}
-                  className="inline-flex items-center gap-3 text-[15px] font-semibold text-primary hover:text-accent transition-colors"
-                >
-                  <FaPhone className="w-4 h-4" />
-                  {branch.phone}
-                </a>
+
+                {/* Branch Details */}
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                      <FaMapMarkerAlt className="w-4 h-4 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Address</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{branch.address}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <FaPhone className="w-4 h-4 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Phone</p>
+                      <a
+                        href={`tel:${branch.phone}`}
+                        className="text-sm font-semibold text-primary hover:text-accent transition-colors"
+                      >
+                        {branch.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <FaClock className="w-4 h-4 text-accent" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Hours</p>
+                      <p className="text-sm text-gray-700">Mon - Sat: 7:00 AM - 9:00 PM</p>
+                      <p className="text-sm text-gray-500">Sun: 7:00 AM - 2:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Actions */}
+                <div className="px-6 pb-6 flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`tel:${branch.phone}`}
+                    className="btn-primary flex-1 text-sm py-3 px-6"
+                  >
+                    <FaPhone className="w-3.5 h-3.5" />
+                    Call Now
+                  </a>
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 text-sm font-semibold rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                  >
+                    <FaEnvelope className="w-3.5 h-3.5" />
+                    Email Us
+                  </a>
+                </div>
               </div>
             ))}
 
-            {/* Contact Details */}
-            <div className="bg-light-gray rounded-2xl p-7 space-y-5 border border-gray-100">
-              <h3 className="text-lg font-bold text-gray-900">Contact Details</h3>
-              <div className="space-y-4">
-                {contactInfo.phones.map((phone) => (
-                  <a
-                    key={phone}
-                    href={`tel:${phone}`}
-                    className="flex items-center gap-3.5 text-[15px] text-gray-600 hover:text-primary transition-colors"
-                  >
-                    <FaPhone className="w-4 h-4 text-accent shrink-0" />
-                    {phone}
-                  </a>
-                ))}
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-3.5 text-[15px] text-gray-600 hover:text-primary transition-colors"
-                >
-                  <FaEnvelope className="w-4 h-4 text-accent shrink-0" />
-                  {contactInfo.email}
-                </a>
-                <div className="flex items-center gap-3.5 text-[15px] text-gray-600">
-                  <FaClock className="w-4 h-4 text-accent shrink-0" />
-                  Mon - Sat: 7:00 AM - 9:00 PM | Sun: 7:00 AM - 2:00 PM
+            {/* All Contact Numbers */}
+            {contactInfo.phones.length > 1 && (
+              <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                <h4 className="text-base font-bold text-gray-900 mb-4">All Contact Numbers</h4>
+                <div className="space-y-3">
+                  {contactInfo.phones.map((phone) => (
+                    <a
+                      key={phone}
+                      href={`tel:${phone}`}
+                      className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary transition-colors group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                        <FaPhone className="w-3.5 h-3.5 text-accent" />
+                      </div>
+                      <span className="font-medium">{phone}</span>
+                      <FaArrowRight className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  ))}
                 </div>
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </SectionWrapper>
 
       {/* Map Section */}
-      <SectionWrapper background="light" withPattern>
-        <div className="text-center mb-14">
+      <SectionWrapper background="white" withPattern spacing="wide">
+        <div className="text-center mb-12">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4"
+            className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Find Us
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-gray-900"
           >
-            Our Location in Surat
+            Our Location
           </motion.h2>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {branches.map((branch, index) => (
             <motion.div
               key={branch.id}
@@ -166,16 +281,25 @@ export default function ContactContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg"
+              className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
             >
-              <div className="px-7 py-5 bg-gradient-to-r from-primary to-secondary text-white">
-                <h3 className="font-semibold text-lg">{branch.name}</h3>
-                <p className="text-blue-100 text-sm mt-1.5 leading-relaxed">{branch.address}</p>
+              <div className="px-6 py-5 bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-between">
+                <div>
+                  <h3 className="font-bold text-lg">{branch.name}</h3>
+                  <p className="text-blue-100 text-sm mt-1 leading-relaxed">{branch.address}</p>
+                </div>
+                <a
+                  href={`tel:${branch.phone}`}
+                  className="hidden sm:flex items-center gap-2 bg-white/15 hover:bg-white/25 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors"
+                >
+                  <FaPhone className="w-3.5 h-3.5" />
+                  {branch.phone}
+                </a>
               </div>
               <iframe
                 src={branch.mapUrl}
                 width="100%"
-                height="380"
+                height="400"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"

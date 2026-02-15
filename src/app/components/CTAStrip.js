@@ -6,7 +6,7 @@ import { contactInfo } from '@/data/siteData';
 
 export default function CTAStrip() {
   return (
-    <section className="relative py-20 md:py-24 bg-gradient-to-r from-primary via-secondary to-accent overflow-hidden">
+    <section className="relative py-20 md:py-24 bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl" />
@@ -20,12 +20,12 @@ export default function CTAStrip() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="relative z-10 section-inner">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
@@ -40,11 +40,11 @@ export default function CTAStrip() {
               <motion.a
                 key={phone}
                 href={`tel:${phone}`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15, duration: 0.5 }}
-                className="btn-outline !px-10 !py-4 !text-base"
+                className="btn-outline text-base py-4 px-10"
               >
                 <span className="relative">
                   <FaPhone className="w-4 h-4" />

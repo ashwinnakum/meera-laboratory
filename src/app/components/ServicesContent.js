@@ -29,11 +29,11 @@ export default function ServicesContent() {
           }}
         />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
+        <div className="relative z-10 section-inner text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-5">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -56,16 +56,16 @@ export default function ServicesContent() {
       {/* Services Grid */}
       <SectionWrapper background="white" withBlobs>
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-14">
+        <div className="flex flex-wrap justify-center gap-4 mb-14">
           {categories.map((category) => (
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`px-6 py-3 rounded-xl text-[15px] font-medium transition-all duration-300 ${
+              className={`px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md shadow-primary/20'
+                  ? 'bg-gradient-to-br from-primary to-secondary text-white shadow-md shadow-primary/20'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800'
               }`}
             >
@@ -96,7 +96,7 @@ export default function ServicesContent() {
       </SectionWrapper>
 
       {/* Home Collection CTA */}
-      <section className="relative py-20 md:py-24 bg-gradient-to-r from-primary via-secondary to-accent overflow-hidden">
+      <section className="relative py-20 md:py-24 bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -106,7 +106,7 @@ export default function ServicesContent() {
         />
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="relative z-10 section-inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ export default function ServicesContent() {
 
             <a
               href={`tel:${contactInfo.phones[0]}`}
-              className="btn-white !px-10 !py-4 !text-base shrink-0"
+              className="btn-white text-base py-4 px-10 shrink-0"
             >
               <FaPhone className="w-4 h-4" />
               Call: {contactInfo.phones[0]}

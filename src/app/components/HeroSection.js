@@ -20,7 +20,7 @@ export default function HeroSection() {
       </video>
 
       {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-secondary/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-secondary/60" />
       <div className="absolute inset-0 bg-black/30" />
 
       {/* Floating decorative shapes */}
@@ -38,12 +38,12 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full">
+      <div className="relative z-10 section-inner w-full">
         <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-blue-200 text-sm font-medium mb-8"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -53,7 +53,7 @@ export default function HeroSection() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-7"
           >
             Trusted Pathology &{' '}
@@ -66,7 +66,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
             className="text-lg md:text-xl text-blue-100/90 mb-10 leading-relaxed max-w-2xl"
           >
             Accurate Reports. Fast Results. Home Sample Collection Available.
@@ -75,15 +75,15 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.7 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
             className="flex flex-wrap gap-5"
           >
-            <a href="/contact" className="btn-white !px-9 !py-4 !text-base">
-              <FaCalendarAlt className="w-4.5 h-4.5" />
+            <a href="/contact" className="btn-white text-base py-4 px-10">
+              <FaCalendarAlt className="w-4 h-4" />
               Book Test Now
             </a>
 
-            <a href={`tel:${contactInfo.phones[0]}`} className="btn-outline !px-9 !py-4 !text-base">
+            <a href={`tel:${contactInfo.phones[0]}`} className="btn-outline text-base py-4 px-10">
               <FaPhone className="w-4 h-4" />
               Call Now: {contactInfo.phones[0]}
             </a>

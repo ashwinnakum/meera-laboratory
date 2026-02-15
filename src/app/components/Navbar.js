@@ -82,7 +82,7 @@ export default function Navbar() {
                 <div className="text-lg md:text-xl font-bold text-primary leading-tight">
                   Meera Laboratory
                 </div>
-                <div className="text-[10px] md:text-xs text-gray-500 tracking-wider uppercase">
+                <div className="text-xs text-gray-500 tracking-wider uppercase">
                   Pathology & Diagnostics
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-5 py-2.5 rounded-lg text-[15px] font-medium transition-colors duration-200 ${
+                  className={`relative px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
                     isActive(link.href)
                       ? 'text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-primary/5'
@@ -115,7 +115,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <a
                 href={`tel:${contactInfo.phones[0]}`}
-                className="btn-primary hidden md:inline-flex !py-3 !px-7 !text-sm"
+                className="btn-primary hidden md:inline-flex text-sm py-2.5 px-5"
               >
                 <FaPhone className="w-3.5 h-3.5" />
                 Book Test
@@ -151,7 +151,7 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-5 py-3.5 rounded-xl text-[15px] font-medium transition-colors ${
+                    className={`block px-5 py-3.5 rounded-xl text-sm font-medium transition-colors ${
                       isActive(link.href)
                         ? 'bg-primary/10 text-primary'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
@@ -163,7 +163,7 @@ export default function Navbar() {
                 <div className="pt-3">
                   <a
                     href={`tel:${contactInfo.phones[0]}`}
-                    className="btn-primary w-full !text-sm"
+                    className="btn-primary w-full text-sm py-2.5 px-5"
                   >
                     <FaPhone className="w-3.5 h-3.5" />
                     Call Now: {contactInfo.phones[0]}

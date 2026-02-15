@@ -19,7 +19,7 @@ export default function HomePackages() {
           Health Packages
         </motion.span>
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
@@ -28,7 +28,7 @@ export default function HomePackages() {
           Affordable Health Checkup Packages
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
@@ -45,8 +45,8 @@ export default function HomePackages() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-            whileHover={{ y: -6 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            whileHover={{ y: -4 }}
             className={`relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ${
               pkg.popular ? 'ring-2 ring-accent shadow-accent/10' : 'border border-gray-100'
             }`}
@@ -62,7 +62,7 @@ export default function HomePackages() {
             )}
 
             {/* Header */}
-            <div className={`px-8 pt-8 pb-7 ${pkg.popular ? 'bg-gradient-to-br from-primary to-secondary text-white' : 'bg-gradient-to-br from-gray-50 to-white'}`}>
+            <div className={`p-8 ${pkg.popular ? 'bg-gradient-to-br from-primary to-secondary text-white' : 'bg-gradient-to-br from-gray-50 to-white'}`}>
               <h3 className={`text-xl font-bold mb-3 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
                 {pkg.name}
               </h3>
@@ -95,9 +95,8 @@ export default function HomePackages() {
               <div className="space-y-4">
                 <a
                   href="/contact"
-                  className={`btn-primary w-full ${
-                    !pkg.popular ? '!bg-[var(--color-primary)] !bg-none' : ''
-                  }`}
+                  className="btn-primary w-full"
+                  style={!pkg.popular ? { background: 'var(--color-primary)' } : undefined}
                 >
                   Book Now
                 </a>

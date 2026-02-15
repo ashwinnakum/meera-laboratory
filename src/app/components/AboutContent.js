@@ -45,9 +45,9 @@ export default function AboutContent() {
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
         <div className="relative z-10 section-inner text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-5">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -74,7 +74,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className="w-full md:w-1/2"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -93,7 +93,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="w-full md:w-1/2"
           >
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
@@ -122,7 +122,7 @@ export default function AboutContent() {
               {['Convenient Branch at Yogichowk', 'Modern Automated Equipment', 'Same Day Reports', 'Home Sample Collection', 'Affordable Health Packages'].map((item) => (
                 <div key={item} className="flex items-center gap-3.5">
                   <FaCheckCircle className="w-4.5 h-4.5 text-green-500 shrink-0" />
-                  <span className="text-gray-700 text-[15px] font-medium">{item}</span>
+                  <span className="text-gray-700 text-sm font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -137,7 +137,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className="w-full md:w-1/2"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -156,7 +156,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="w-full md:w-1/2"
           >
             <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-4">
@@ -199,7 +199,7 @@ export default function AboutContent() {
             Our Location
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-gray-900"
@@ -243,7 +243,7 @@ export default function AboutContent() {
             Our Values
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-gray-900"
@@ -262,7 +262,7 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -4 }}
                 className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">

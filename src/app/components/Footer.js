@@ -49,7 +49,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-white font-bold text-lg leading-tight">Meera Laboratory</div>
-                <div className="text-[11px] text-gray-400 tracking-wider uppercase">
+                <div className="text-xs text-gray-400 tracking-wider uppercase">
                   Pathology & Diagnostics
                 </div>
               </div>
