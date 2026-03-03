@@ -51,7 +51,7 @@ export default function StatsCounter({ stats }) {
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 section-inner">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -59,16 +59,16 @@ export default function StatsCounter({ stats }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="text-center"
+              className="text-center py-2"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-3">
+              <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-1.5 sm:mb-3">
                 <Counter
                   value={stat.value}
                   suffix={stat.suffix}
                   prefix={stat.prefix}
                 />
               </div>
-              <div className="text-blue-200 text-sm md:text-base font-medium tracking-wide uppercase">
+              <div className="text-blue-200 text-xs sm:text-sm md:text-base font-medium tracking-wide uppercase">
                 {stat.label}
               </div>
             </motion.div>

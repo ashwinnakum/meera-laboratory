@@ -11,7 +11,7 @@ export default function ContactContent() {
   return (
     <>
       {/* Page Hero */}
-      <section className="relative bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden py-20 md:py-28">
+      <section className="relative bg-gradient-to-br from-primary via-secondary to-accent overflow-hidden py-14 sm:py-20 md:py-24">
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -27,15 +27,15 @@ export default function ContactContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-4">
+            <div className="flex items-center justify-center gap-2.5 text-blue-200 text-sm mb-3 sm:mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <span>/</span>
               <span className="text-white font-medium">Contact Us</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
               Get In Touch
             </h1>
-            <p className="text-blue-100 text-lg max-w-xl mx-auto leading-relaxed">
+            <p className="text-blue-100 text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Book your tests, schedule home collection, or reach out for any enquiries.
             </p>
           </motion.div>
@@ -50,7 +50,7 @@ export default function ContactContent() {
       {/* Quick Contact Strip */}
       <section className="bg-background relative z-20">
         <div className="section-inner">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 -mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 -mt-6 sm:-mt-8">
             {[
               {
                 icon: FaPhone,
@@ -83,10 +83,10 @@ export default function ContactContent() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                    className="group flex items-center gap-3 sm:gap-4 bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                   >
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
-                      <item.icon className="w-5 h-5 text-white" />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{item.label}</p>
@@ -94,9 +94,9 @@ export default function ContactContent() {
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
-                      <item.icon className="w-5 h-5 text-white" />
+                  <div className="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl p-4 sm:p-5 shadow-lg border border-gray-100">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{item.label}</p>
@@ -115,7 +115,7 @@ export default function ContactContent() {
 
       {/* Contact Form + Branch Info */}
       <SectionWrapper background="light" withBlobs spacing="wide">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-14">
           {/* Form - takes 3 columns */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -124,11 +124,11 @@ export default function ContactContent() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-3"
           >
-            <div className="mb-8">
-              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block text-accent font-semibold text-xs sm:text-sm uppercase tracking-widest mb-2 sm:mb-3">
                 Book a Test
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 Send Us Your Enquiry
               </h2>
             </div>
@@ -141,13 +141,13 @@ export default function ContactContent() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-2 space-y-6"
+            className="lg:col-span-2 space-y-5 sm:space-y-6"
           >
-            <div className="mb-8">
-              <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block text-accent font-semibold text-xs sm:text-sm uppercase tracking-widest mb-2 sm:mb-3">
                 Our Branch
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 Visit Us
               </h2>
             </div>
@@ -159,9 +159,9 @@ export default function ContactContent() {
                 className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
               >
                 {/* Branch Header */}
-                <div className="bg-gradient-to-r from-primary to-secondary px-6 py-4">
-                  <h3 className="text-white font-bold text-lg flex items-center gap-3">
-                    <span className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm font-bold">
+                <div className="bg-gradient-to-r from-primary to-secondary px-5 sm:px-6 py-3.5 sm:py-4">
+                  <h3 className="text-white font-bold text-base sm:text-lg flex items-center gap-3">
+                    <span className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm font-bold">
                       {branch.id}
                     </span>
                     {branch.name}
@@ -169,10 +169,10 @@ export default function ContactContent() {
                 </div>
 
                 {/* Branch Details */}
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
-                      <FaMapMarkerAlt className="w-4 h-4 text-accent" />
+                <div className="p-5 sm:p-6 space-y-3.5 sm:space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
+                      <FaMapMarkerAlt className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Address</p>
@@ -180,9 +180,9 @@ export default function ContactContent() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <FaPhone className="w-4 h-4 text-accent" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <FaPhone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Phone</p>
@@ -195,9 +195,9 @@ export default function ContactContent() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <FaClock className="w-4 h-4 text-accent" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <FaClock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Hours</p>
@@ -208,17 +208,17 @@ export default function ContactContent() {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="px-6 pb-6 flex flex-col sm:flex-row gap-3">
+                <div className="px-5 sm:px-6 pb-5 sm:pb-6 flex flex-col sm:flex-row gap-3">
                   <a
                     href={`tel:${branch.phone}`}
-                    className="btn-primary flex-1 text-sm py-3 px-6"
+                    className="btn-primary flex-1 py-3"
                   >
                     <FaPhone className="w-3.5 h-3.5" />
                     Call Now
                   </a>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 text-sm font-semibold rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                    className="flex-1 inline-flex items-center justify-center gap-2 py-3 text-sm font-semibold rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
                   >
                     <FaEnvelope className="w-3.5 h-3.5" />
                     Email Us
@@ -229,8 +229,8 @@ export default function ContactContent() {
 
             {/* All Contact Numbers */}
             {contactInfo.phones.length > 1 && (
-              <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-                <h4 className="text-base font-bold text-gray-900 mb-4">All Contact Numbers</h4>
+              <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-md border border-gray-100">
+                <h4 className="text-base font-bold text-gray-900 mb-3 sm:mb-4">All Contact Numbers</h4>
                 <div className="space-y-3">
                   {contactInfo.phones.map((phone) => (
                     <a
@@ -254,12 +254,12 @@ export default function ContactContent() {
 
       {/* Map Section */}
       <SectionWrapper background="white" withPattern spacing="wide">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3"
+            className="inline-block text-accent font-semibold text-xs sm:text-sm uppercase tracking-widest mb-2 sm:mb-3"
           >
             Find Us
           </motion.span>
@@ -267,7 +267,7 @@ export default function ContactContent() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
           >
             Our Location
           </motion.h2>
@@ -283,14 +283,14 @@ export default function ContactContent() {
               transition={{ delay: index * 0.2 }}
               className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
             >
-              <div className="px-6 py-5 bg-gradient-to-r from-primary to-secondary text-white flex items-center justify-between">
+              <div className="px-5 sm:px-6 py-4 sm:py-5 bg-gradient-to-r from-primary to-secondary text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                  <h3 className="font-bold text-lg">{branch.name}</h3>
+                  <h3 className="font-bold text-base sm:text-lg">{branch.name}</h3>
                   <p className="text-blue-100 text-sm mt-1 leading-relaxed">{branch.address}</p>
                 </div>
                 <a
                   href={`tel:${branch.phone}`}
-                  className="hidden sm:flex items-center gap-2 bg-white/15 hover:bg-white/25 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors w-full sm:w-auto"
                 >
                   <FaPhone className="w-3.5 h-3.5" />
                   {branch.phone}
@@ -299,12 +299,12 @@ export default function ContactContent() {
               <iframe
                 src={branch.mapUrl}
                 width="100%"
-                height="400"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`${branch.name} Location`}
+                className="h-56 sm:h-72 md:h-96"
               />
             </motion.div>
           ))}

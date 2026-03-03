@@ -54,7 +54,7 @@ export default function ContactForm() {
   };
 
   const inputClasses = (field) =>
-    `w-full px-4 py-3 rounded-xl border ${
+    `w-full px-3.5 py-3 sm:px-4 rounded-xl border ${
       errors[field]
         ? 'border-red-300 bg-red-50'
         : 'border-gray-200 bg-gray-50 hover:border-gray-300'
@@ -69,16 +69,16 @@ export default function ContactForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="bg-white rounded-2xl p-10 md:p-14 shadow-lg border border-gray-100 text-center"
+            className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-100 text-center"
           >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.2 }}
             >
-              <FaCheckCircle className="w-14 h-14 text-green-500 mx-auto mb-5" />
+              <FaCheckCircle className="w-12 h-12 sm:w-14 sm:h-14 text-green-500 mx-auto mb-4 sm:mb-5" />
             </motion.div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
             <p className="text-gray-500 text-sm max-w-sm mx-auto">
               We have received your request. Our team will contact you shortly.
             </p>
@@ -93,16 +93,16 @@ export default function ContactForm() {
             className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
           >
             {/* Form Header */}
-            <div className="px-6 md:px-8 pt-6 md:pt-8 pb-0">
-              <h3 className="text-lg font-bold text-gray-900">Contact Details</h3>
+            <div className="px-5 sm:px-6 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-0">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900">Contact Details</h3>
               <p className="text-sm text-gray-500 mt-1">
                 Share your info and we will reach out within a few minutes.
               </p>
             </div>
 
             {/* Form Body */}
-            <div className="px-6 md:px-8 py-6 space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="px-5 sm:px-6 md:px-8 py-5 sm:py-6 space-y-4 sm:space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
                     Full Name <span className="text-red-500">*</span>
@@ -155,13 +155,13 @@ export default function ContactForm() {
               <div className="border-t border-gray-100" />
 
               <div>
-                <h3 className="text-lg font-bold text-gray-900">Test Information</h3>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900">Test Information</h3>
                 <p className="text-sm text-gray-500 mt-1">
                   Select the test you need and add any extra instructions.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
                     Email Address
@@ -219,16 +219,16 @@ export default function ContactForm() {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Any specific requirements or questions..."
-                  className={`${inputClasses('message')} min-h-[120px] resize-none`}
+                  className={`${inputClasses('message')} min-h-[100px] sm:min-h-[120px] resize-none`}
                 />
               </div>
             </div>
 
             {/* Form Footer */}
-            <div className="px-6 md:px-8 pb-6 md:pb-8">
+            <div className="px-5 sm:px-6 md:px-8 pb-5 sm:pb-6 md:pb-8">
               <button
                 type="submit"
-                className="btn-primary w-full"
+                className="btn-primary w-full py-3.5"
               >
                 <FaPaperPlane className="w-4 h-4" />
                 Submit Enquiry
