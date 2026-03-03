@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
               <div className="w-full md:w-1/2">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="/images/lab-equipment.jpg"
+                    src={item.image}
                     alt={item.title}
                     width={600}
                     height={400}

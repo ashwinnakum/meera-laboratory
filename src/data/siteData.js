@@ -34,26 +34,31 @@ export const whyChooseUs = [
     title: 'Same Day Reports',
     description: 'Get your test results on the same day. We understand the urgency of accurate diagnosis and deliver reports promptly.',
     icon: 'clock',
+    image: '/images/blood-test.jpg',
   },
   {
     title: 'Home Sample Collection',
     description: 'Skip the visit! Our trained phlebotomists collect samples from your doorstep at your preferred time.',
     icon: 'home',
+    image: '/images/hero-lab.jpg',
   },
   {
     title: 'Advanced Equipment',
     description: 'State-of-the-art fully automated analyzers ensure precise and reliable test results every time.',
     icon: 'equipment',
+    image: '/images/lab-equipment.jpg',
   },
   {
     title: 'Experienced Pathologist',
     description: 'Tests supervised by qualified and experienced pathologists ensuring highest standards of accuracy.',
     icon: 'doctor',
+    image: '/images/team-doctor.jpg',
   },
   {
     title: 'Accurate Results',
     description: '98% accuracy rate with strict quality control protocols. NABL guidelines followed for all procedures.',
     icon: 'accuracy',
+    image: '/images/microscope.jpg',
   },
 ];
 
