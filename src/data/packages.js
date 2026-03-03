@@ -4,7 +4,7 @@ export const packages = [
     name: 'Full Body Checkup',
     price: 1499,
     originalPrice: 4999,
-    popular: false,
+    popular: true,
     tests: [
       'CBC (Complete Blood Count)',
       'HbA1c',
@@ -29,7 +29,7 @@ export const packages = [
     name: 'Smart Health Package',
     price: 999,
     originalPrice: 3499,
-    popular: true,
+    popular: false,
     tests: [
       'CBC (Complete Blood Count)',
       'HbA1c',
