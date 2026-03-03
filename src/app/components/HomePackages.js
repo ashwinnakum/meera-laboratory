@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaCheck, FaStar, FaPhone } from 'react-icons/fa';
+import { FaCheck, FaStar, FaPhoneAlt } from 'react-icons/fa';
 import SectionWrapper from './SectionWrapper';
 import { packages } from '@/data/packages';
 import { contactInfo } from '@/data/siteData';
@@ -103,7 +103,7 @@ export default function HomePackages() {
                   href={`tel:${contactInfo.phones[0]}`}
                   className="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors py-2"
                 >
-                  <FaPhone className="w-3.5 h-3.5" />
+                  <FaPhoneAlt className="w-3.5 h-3.5" />
                   Call to Book: {contactInfo.phones[0]}
                 </a>
               </div>

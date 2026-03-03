@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaPhone } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
 import { contactInfo } from '@/data/siteData';
 
 export default function CTAStrip() {
@@ -47,7 +47,7 @@ export default function CTAStrip() {
                 className="btn-outline w-full sm:w-auto py-3.5 px-6 sm:py-4 sm:px-8"
               >
                 <span className="relative">
-                  <FaPhone className="w-4 h-4" />
+                  <FaPhoneAlt className="w-4 h-4" />
                   <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
                 </span>
                 {phone}

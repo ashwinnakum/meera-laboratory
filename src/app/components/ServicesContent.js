@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 import ServiceCard from './ServiceCard';
 import { services, categories } from '@/data/services';
-import { FaPhone, FaHome } from 'react-icons/fa';
+import { FaPhoneAlt, FaHome } from 'react-icons/fa';
 import { contactInfo } from '@/data/siteData';
 
 export default function ServicesContent() {
@@ -130,7 +130,7 @@ export default function ServicesContent() {
               href={`tel:${contactInfo.phones[0]}`}
               className="btn-white w-full sm:w-auto py-3.5 px-6 sm:py-4 sm:px-8 shrink-0"
             >
-              <FaPhone className="w-4 h-4" />
+              <FaPhoneAlt className="w-4 h-4" />
               Call: {contactInfo.phones[0]}
             </a>
           </motion.div>

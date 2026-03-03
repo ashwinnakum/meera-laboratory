@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { contactInfo, branches } from '@/data/siteData';
 
 export default function Footer() {
@@ -126,7 +126,7 @@ export default function Footer() {
                     href={`tel:${phone}`}
                     className="flex items-center gap-3 text-sm text-gray-400 hover:text-accent transition-colors min-h-[44px]"
                   >
-                    <FaPhone className="w-3.5 h-3.5 text-accent" />
+                    <FaPhoneAlt className="w-3.5 h-3.5 text-accent" />
                     {phone}
                   </a>
                 ))}

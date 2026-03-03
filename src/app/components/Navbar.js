@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { contactInfo } from '@/data/siteData';
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="bg-primary text-white text-xs sm:text-sm py-2 sm:py-2.5 relative z-50">
         <div className="section-inner flex justify-between items-center">
           <a href={`tel:${contactInfo.phones[0]}`} className="flex items-center gap-2 hover:text-blue-200 transition-colors">
-            <FaPhone className="w-3 h-3" />
+            <FaPhoneAlt className="w-3 h-3" />
             <span>{contactInfo.phones[0]}</span>
           </a>
           <a href={`mailto:${contactInfo.email}`} className="hidden sm:flex items-center gap-2 hover:text-blue-200 transition-colors">
@@ -115,7 +115,7 @@ export default function Navbar() {
                 href={`tel:${contactInfo.phones[0]}`}
                 className="btn-primary hidden md:inline-flex text-sm py-2.5 px-5"
               >
-                <FaPhone className="w-3.5 h-3.5" />
+                <FaPhoneAlt className="w-3.5 h-3.5" />
                 Book Test
               </a>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
                     href={`tel:${contactInfo.phones[0]}`}
                     className="btn-primary w-full py-3.5"
                   >
-                    <FaPhone className="w-3.5 h-3.5" />
+                    <FaPhoneAlt className="w-3.5 h-3.5" />
                     Call Now: {contactInfo.phones[0]}
                   </a>
                 </div>

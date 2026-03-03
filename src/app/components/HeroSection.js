@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaPhone, FaCalendarAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaCalendarAlt } from 'react-icons/fa';
 import { contactInfo } from '@/data/siteData';
 
 export default function HeroSection() {
@@ -84,7 +84,7 @@ export default function HeroSection() {
             </a>
 
             <a href={`tel:${contactInfo.phones[0]}`} className="btn-outline w-full sm:w-auto py-3.5 px-6 sm:py-4 sm:px-8">
-              <FaPhone className="w-4 h-4" />
+              <FaPhoneAlt className="w-4 h-4" />
               Call: {contactInfo.phones[0]}
             </a>
           </motion.div>

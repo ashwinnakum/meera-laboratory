@@ -16,7 +16,7 @@ export const branches = [
     name: 'Meera Laboratory - Yogichowk',
     address: 'G-45, the palladium mall, Yogichowk, Surat, Gujarat 395011',
     phone: '8866064656',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8!2d72.87!3d21.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEzJzEyLjAiTiA3MsKwNTInMTIuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d72.8838024!3d21.2141901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0b50fc43a7%3A0x7ad95404b689ae03!2sMeera%20Pathology%20Laboratory!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   },
 ];
 
