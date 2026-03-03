@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { contactInfo, branches } from '@/data/siteData';
 
 export default function Footer() {
@@ -58,15 +58,31 @@ export default function Footer() {
               Trusted diagnostic laboratory in Surat offering accurate pathology tests with same-day reports and home sample collection facility.
             </p>
             <div className="flex gap-2.5 sm:gap-3">
-              {[FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-11 h-11 bg-gray-800 hover:bg-primary rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-105"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="w-11 h-11 bg-gray-800 hover:bg-primary rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-105"
+                aria-label="Email us"
+              >
+                <FaEnvelope className="w-4 h-4" />
+              </a>
+              <a
+                href={contactInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 bg-gray-800 hover:bg-primary rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-105"
+                aria-label="Follow us on Instagram"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent('Hello Meera Laboratory! I would like to book a test. Please share the details.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 bg-gray-800 hover:bg-primary rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-105"
+                aria-label="Chat on WhatsApp"
+              >
+                <FaWhatsapp className="w-4 h-4" />
+              </a>
             </div>
           </div>
 

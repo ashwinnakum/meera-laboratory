@@ -69,8 +69,7 @@ export default function ContactContent() {
               {
                 icon: FaClock,
                 label: 'Working Hours',
-                value: 'Mon-Sat: 7AM - 9PM',
-                subValue: 'Sun: 7AM - 2PM',
+                value: 'All Days: 9 AM - 10 PM',
                 color: 'from-violet-500 to-violet-600',
               },
             ].map((item) => (
@@ -201,8 +200,7 @@ export default function ContactContent() {
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Hours</p>
-                      <p className="text-sm text-gray-700">Mon - Sat: 7:00 AM - 9:00 PM</p>
-                      <p className="text-sm text-gray-500">Sun: 7:00 AM - 2:00 PM</p>
+                      <p className="text-sm text-gray-700">All Days: 9:00 AM - 10:00 PM</p>
                     </div>
                   </div>
                 </div>

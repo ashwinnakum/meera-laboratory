@@ -8,6 +8,8 @@ export const navigation = [
 export const contactInfo = {
   phones: ['8866064656'],
   email: 'nakumdhaval1600@gmail.com',
+  instagram: 'https://www.instagram.com/meera_pathology_laboratory01/',
+  whatsapp: '918866064656',
 };
 
 export const branches = [
