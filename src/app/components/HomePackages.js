@@ -69,8 +69,13 @@ export default function HomePackages() {
               <p className={`text-sm mb-4 sm:mb-6 leading-relaxed ${pkg.popular ? 'text-blue-100' : 'text-gray-500'}`}>
                 {pkg.description}
               </p>
-              <div className="flex items-baseline gap-1.5">
-                <span className={`text-sm ${pkg.popular ? 'text-blue-200' : 'text-gray-400'}`}>Rs.</span>
+              <div className="flex items-baseline gap-2">
+                {pkg.originalPrice && (
+                  <span className={`text-base sm:text-lg line-through ${pkg.popular ? 'text-blue-200' : 'text-gray-400'}`}>
+                    ₹{pkg.originalPrice}
+                  </span>
+                )}
+                <span className={`text-sm ${pkg.popular ? 'text-blue-200' : 'text-gray-400'}`}>₹</span>
                 <span className={`text-3xl sm:text-4xl font-bold ${pkg.popular ? 'text-white' : 'text-primary'}`}>
                   {pkg.price}
                 </span>

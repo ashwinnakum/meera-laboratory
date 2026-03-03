@@ -6,7 +6,7 @@ export const navigation = [
 ];
 
 export const contactInfo = {
-  phones: ['8866064656'],
+  phones: ['8866064656', '8469608490', '7600798282'],
   email: 'nakumdhaval1600@gmail.com',
   instagram: 'https://www.instagram.com/meera_pathology_laboratory01/',
   whatsapp: '918866064656',
@@ -15,9 +15,16 @@ export const contactInfo = {
 export const branches = [
   {
     id: 1,
-    name: 'Meera Laboratory - Yogichowk',
-    address: 'G-45, the palladium mall, Yogichowk, Surat, Gujarat 395011',
+    name: 'Meera Laboratory - Vijaynagar',
+    address: '136, First Floor, Vijaynagar, Near Archana School, Parvatpatiya Chowk, Surat',
     phone: '8866064656',
+    mapUrl: '',
+  },
+  {
+    id: 2,
+    name: 'Meera Laboratory - Yogichowk',
+    address: 'G-45, The Palladium Mall, Yogichowk, Surat, Gujarat 395011',
+    phone: '8469608490',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d72.8838024!3d21.2141901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0b50fc43a7%3A0x7ad95404b689ae03!2sMeera%20Pathology%20Laboratory!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   },
 ];

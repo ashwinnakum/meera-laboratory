@@ -272,7 +272,7 @@ export default function ContactContent() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {branches.map((branch, index) => (
+          {branches.filter((b) => b.mapUrl).map((branch, index) => (
             <motion.div
               key={branch.id}
               initial={{ opacity: 0, y: 30 }}
