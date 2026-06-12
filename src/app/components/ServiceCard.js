@@ -2,17 +2,31 @@
 
 import { motion } from 'framer-motion';
 
-export default function ServiceCard({ service, index = 0, compact = false }) {
+export default function ServiceCard({ service, index = 0, compact = false, presence = false }) {
   const Icon = service.icon;
+
+  // presence: smooth add/remove/reflow for filterable grids (services page).
+  // default: one-time scroll-in stagger (home page).
+  const animationProps = presence
+    ? {
+        layout: true,
+        initial: { opacity: 0, scale: 0.95 },
+        animate: { opacity: 1, scale: 1 },
+        exit: { opacity: 0, scale: 0.95 },
+        transition: { duration: 0.3, ease: 'easeOut' },
+      }
+    : {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+        transition: { delay: index * 0.1, duration: 0.5, ease: 'easeOut' },
+      };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
+      {...animationProps}
       whileHover={{ y: -4 }}
-      className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden"
+      className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100 overflow-hidden"
     >
       {/* Gradient border top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

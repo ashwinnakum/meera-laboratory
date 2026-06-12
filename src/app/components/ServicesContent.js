@@ -75,14 +75,18 @@ export default function ServicesContent() {
         </div>
 
         {/* Grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <motion.div
+          layout
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+        >
           <AnimatePresence mode="popLayout">
-            {filteredServices.map((service, index) => (
+            {filteredServices.map((service) => (
               <ServiceCard
                 key={service.id}
                 service={service}
-                index={index}
                 compact={false}
+                presence
               />
             ))}
           </AnimatePresence>
