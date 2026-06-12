@@ -158,7 +158,7 @@ export default function ContactContent() {
                 className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
               >
                 {/* Branch Header */}
-                <div className="bg-gradient-to-r from-primary to-secondary px-5 sm:px-6 py-3.5 sm:py-4">
+                <div className="bg-gradient-to-br from-primary to-secondary px-5 sm:px-6 py-3.5 sm:py-4">
                   <h3 className="text-white font-bold text-base sm:text-lg flex items-center gap-3">
                     <span className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm font-bold">
                       {branch.id}
@@ -265,6 +265,7 @@ export default function ContactContent() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
           >
             Our Location
@@ -278,10 +279,10 @@ export default function ContactContent() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
               className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
             >
-              <div className="px-5 sm:px-6 py-4 sm:py-5 bg-gradient-to-r from-primary to-secondary text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="px-5 sm:px-6 py-4 sm:py-5 bg-gradient-to-br from-primary to-secondary text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
                   <h3 className="font-bold text-base sm:text-lg">{branch.name}</h3>
                   <p className="text-blue-100 text-sm mt-1 leading-relaxed">{branch.address}</p>

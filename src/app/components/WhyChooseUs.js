@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-5"
         >
           Why Surat Trusts Meera Laboratory
@@ -55,13 +55,13 @@ export default function WhyChooseUs() {
             >
               {/* Image */}
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <div className="group relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={600}
                     height={400}
-                    className="w-full h-48 sm:h-64 md:h-80 object-cover"
+                    className="w-full h-48 sm:h-64 md:h-80 object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
                   <div className="absolute bottom-4 left-4">
@@ -74,8 +74,8 @@ export default function WhyChooseUs() {
 
               {/* Content */}
               <div className="w-full md:w-1/2">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
-                  {Icon && <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />}
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                  {Icon && <Icon className="w-8 h-8 text-primary" />}
                 </div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-5">
                   {item.title}

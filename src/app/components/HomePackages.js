@@ -22,7 +22,7 @@ export default function HomePackages() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-5"
         >
           Affordable Health Checkup Packages
@@ -31,7 +31,7 @@ export default function HomePackages() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
           className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base"
         >
           Comprehensive health packages designed to give you a complete picture of your health at affordable prices.
@@ -62,7 +62,7 @@ export default function HomePackages() {
             )}
 
             {/* Header */}
-            <div className={`p-5 sm:p-6 md:p-8 ${pkg.popular ? 'bg-gradient-to-br from-primary to-secondary text-white' : 'bg-gradient-to-br from-gray-50 to-white'}`}>
+            <div className={`p-6 md:p-8 ${pkg.popular ? 'bg-gradient-to-br from-primary to-secondary text-white' : 'bg-gradient-to-br from-gray-50 to-white'}`}>
               <h3 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
                 {pkg.name}
               </h3>
@@ -84,7 +84,7 @@ export default function HomePackages() {
             </div>
 
             {/* Tests List */}
-            <div className="p-5 sm:p-6 md:p-8">
+            <div className="p-6 md:p-8">
               <div className="text-sm font-semibold text-gray-900 mb-4">
                 Includes {pkg.tests.length} Tests:
               </div>

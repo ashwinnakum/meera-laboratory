@@ -79,13 +79,13 @@ export default function AboutContent() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="group relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/about-lab.jpg"
                 alt="Meera Laboratory"
                 width={600}
                 height={450}
-                className="w-full h-48 sm:h-64 md:h-80 lg:h-[450px] object-cover"
+                className="w-full h-48 sm:h-64 md:h-80 lg:h-[450px] object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
@@ -142,13 +142,13 @@ export default function AboutContent() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="group relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/team-doctor.jpg"
                 alt="Expert Team"
                 width={600}
                 height={450}
-                className="w-full h-48 sm:h-64 md:h-80 lg:h-[450px] object-cover"
+                className="w-full h-48 sm:h-64 md:h-80 lg:h-[450px] object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
@@ -204,6 +204,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
           >
             Visit Our Branch in Surat
@@ -218,7 +219,7 @@ export default function AboutContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-light-gray rounded-2xl p-5 sm:p-6 md:p-8 text-center"
+              className="bg-light-gray rounded-2xl p-6 md:p-8 text-center"
             >
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <span className="text-primary font-bold text-xl sm:text-2xl">{branch.id}</span>
@@ -248,6 +249,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900"
           >
             What Drives Us Every Day
@@ -265,10 +267,10 @@ export default function AboutContent() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4 }}
-                className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 text-center border border-gray-100"
               >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5">
-                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-5">
+                  <Icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">{value.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>

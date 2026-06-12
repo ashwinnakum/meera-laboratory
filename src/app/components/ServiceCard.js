@@ -10,9 +10,9 @@ export default function ServiceCard({ service, index = 0, compact = false }) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.08, duration: 0.5 }}
+      transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
       whileHover={{ y: -4 }}
-      className="group relative bg-white rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden"
+      className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden"
     >
       {/* Gradient border top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -21,8 +21,8 @@ export default function ServiceCard({ service, index = 0, compact = false }) {
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-accent/5 rounded-full blur-2xl group-hover:bg-accent/10 transition-colors duration-300" />
 
       <div className="relative z-10">
-        <div className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center mb-4 sm:mb-5 group-hover:from-primary/15 group-hover:to-accent/15 transition-colors duration-300">
-          {Icon && <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />}
+        <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:from-primary/15 group-hover:to-accent/15 transition-colors duration-300">
+          {Icon && <Icon className="w-6 h-6 text-primary" />}
         </div>
 
         <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">

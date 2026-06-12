@@ -25,7 +25,7 @@ export default function CTAStrip() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-5">
@@ -43,7 +43,7 @@ export default function CTAStrip() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
                 className="btn-outline w-full sm:w-auto py-3.5 px-6 sm:py-4 sm:px-8"
               >
                 <span className="relative">

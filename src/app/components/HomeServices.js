@@ -25,7 +25,7 @@ export default function HomeServices() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-5"
         >
           Diagnostic Tests We Offer
@@ -34,7 +34,7 @@ export default function HomeServices() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
           className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base text-center"
         >
           Comprehensive range of pathology and diagnostic tests with accurate results and same-day reports.
@@ -51,7 +51,7 @@ export default function HomeServices() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
         className="text-center mt-8 sm:mt-10 md:mt-14"
       >
         <Link href="/services" className="btn-primary w-full sm:w-auto py-3.5 px-8">
