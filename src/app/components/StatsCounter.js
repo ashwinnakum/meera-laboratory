@@ -51,15 +51,16 @@ export default function StatsCounter({ stats }) {
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 section-inner">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="text-center py-2"
+              transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
+              whileHover={{ y: -4 }}
+              className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-colors duration-300 hover:bg-white/10"
             >
               <div className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-1.5 sm:mb-3">
                 <Counter

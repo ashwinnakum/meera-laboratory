@@ -62,6 +62,61 @@ export const whyChooseUs = [
   },
 ];
 
+export const popularTests = [
+  'Complete Blood Count (CBC)',
+  'Thyroid Profile',
+  'Lipid Profile',
+  'HbA1c',
+  'Vitamin D3',
+  'Vitamin B12',
+  'Liver Function Test',
+  'Kidney Function Test',
+  'Blood Sugar',
+  'Urine Analysis',
+];
+
+export const howItWorks = [
+  {
+    step: 1,
+    title: 'Book Your Test',
+    description: 'Call us or send an enquiry online. Choose a time that works best for you.',
+    icon: 'book',
+  },
+  {
+    step: 2,
+    title: 'Sample Collection',
+    description: 'Visit our lab or let our trained phlebotomist collect your sample at home.',
+    icon: 'collect',
+  },
+  {
+    step: 3,
+    title: 'Get Your Report',
+    description: 'Receive your accurate report the same day on WhatsApp or email.',
+    icon: 'report',
+  },
+];
+
+export const testimonials = [
+  {
+    name: 'Rakesh Patel',
+    location: 'Yogichowk, Surat',
+    rating: 5,
+    text: 'Very professional staff and clean laboratory. I got my full body checkup report the same evening. Highly recommended for everyone in Surat.',
+  },
+  {
+    name: 'Priya Shah',
+    location: 'Varachha, Surat',
+    rating: 5,
+    text: 'The home collection service is excellent. The phlebotomist came on time, was very polite, and the report was accurate and quick.',
+  },
+  {
+    name: 'Mehul Desai',
+    location: 'Sarthana, Surat',
+    rating: 5,
+    text: 'Affordable health packages with same-day reports. The staff explained everything clearly. Best pathology lab in this area.',
+  },
+];
+
 export const companyInfo = {
   name: 'Meera Laboratory',
   tagline: 'Trusted Pathology & Diagnostic Laboratory',

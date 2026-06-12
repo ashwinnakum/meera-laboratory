@@ -23,8 +23,12 @@ src/
 │   ├── contact/page.js        # Contact page → ContactContent
 │   └── components/
 │       ├── Navbar.js           # Top info bar + sticky nav + mobile hamburger menu
-│       ├── HeroSection.js      # Full-screen video hero (home only)
-│       ├── StatsCounter.js     # Animated number counters on dark bg
+│       ├── HeroSection.js      # Full-screen video hero with floating glass cards (home only)
+│       ├── TestsMarquee.js     # Auto-scrolling popular tests strip under hero
+│       ├── StatsCounter.js     # Animated number counters in glass cards on dark bg
+│       ├── HowItWorks.js       # 3-step process section (Book → Collect → Report)
+│       ├── Testimonials.js     # Patient review cards with star ratings
+│       ├── WhatsAppButton.js   # Floating WhatsApp button (site-wide, in layout)
 │       ├── HomeServices.js     # 6-card service preview grid
 │       ├── HomePackages.js     # 2-card health package comparison
 │       ├── WhyChooseUs.js      # Alternating image+text feature rows

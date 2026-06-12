@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { contactInfo, branches } from '@/data/siteData';
+import { contactInfo, branches, popularTests as allPopularTests } from '@/data/siteData';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,14 +15,7 @@ export default function Footer() {
     { name: 'Contact Us', href: '/contact' },
   ];
 
-  const popularTests = [
-    'Complete Blood Count',
-    'Thyroid Profile',
-    'Lipid Profile',
-    'Vitamin D3',
-    'HbA1c',
-    'Liver Function Test',
-  ];
+  const popularTests = allPopularTests.slice(0, 6);
 
   return (
     <footer className="relative bg-gray-900 text-gray-300">
